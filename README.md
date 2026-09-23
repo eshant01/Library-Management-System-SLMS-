@@ -5,39 +5,28 @@ A **Core Java–based Library Management System** developed as a **Build Your Ow
 
 ## Overview
 
-SLMS lets an **Admin**, **Librarian**, or **Member** log in to a
-role-appropriate menu to manage a library's book catalog, issue/return
-books, track overdue fines, and view analytical reports. Data is persisted
-to human-readable CSV files, so the whole project runs with **zero external
-dependencies** — just a JDK.
+The **Library Management System** provides separate access levels for **Administrators, Librarians, and Members**, with each role receiving a dedicated set of operations. The application supports **book inventory management, borrowing and returning, overdue fine tracking, user administration, and library reporting**. All records are maintained in **readable CSV-based storage**, allowing the system to operate as a completely **self-contained Core Java application without requiring any third-party libraries or external services**.
+
 
 ## Features
+* **Role-specific functionality** — The system supports three user categories: **Admin, Librarian, and Member**. Each role is provided with its own set of operations through an abstract `User` hierarchy and runtime polymorphism.
 
-- **Role-based access control** — Admin, Librarian, and Member each see a
-  different menu, enforced via an abstract `User` class with three
-  polymorphic subclasses.
-- **Book catalog management** — add, update, remove, list, and search books
-  by title/author/category.
-- **Issue & return workflow** — borrow limits (no duplicate active loans),
-  automatic due-date calculation (14-day loan period), and automatic
-  per-day overdue fine calculation on return.
-- **User management** — self-registration for members; Admins can create
-  Librarian/Admin accounts and delete users.
-- **Reporting & analytics** — inventory summary, most-borrowed books,
-  overdue report, and per-member activity/fines report.
-- **Centralized validation & custom exceptions** — every service method
-  validates input and raises a specific, catchable exception
-  (`InvalidInputException`, `DuplicateEntryException`,
-  `BookNotFoundException`, `UserNotFoundException`,
-  `AuthenticationException`, `BookUnavailableException`).
-- **File-based logging** — every significant action (login, book added,
-  book issued/returned, errors) is timestamped and written to
-  `logs/app.log` via a Singleton logger.
-- **Password hashing** — passwords are SHA-256 hashed before being written
-  to disk; plaintext passwords are never persisted.
-- **Self-contained test suite** — 20 unit tests exercising validation rules,
-  authentication, and the issue/return/fine lifecycle, run against
-  in-memory fakes (no external test framework required).
+* **Library inventory operations** — Librarians and authorized users can maintain the book collection by **adding new books, modifying details, deleting records, viewing the catalog, and performing searches** based on title, author, or category.
+
+* **Complete borrowing cycle** — Members can issue and return books subject to defined borrowing rules. The application prevents multiple active issues of the same book, assigns a **14-day return deadline**, and calculates overdue charges automatically according to the number of delayed days.
+
+* **Account administration** — New members can create their own accounts, while administrators have higher-level privileges to **register staff accounts, create administrative users, and remove existing user records**.
+
+* **Library insights and reports** — Built-in reports provide information such as **current inventory, frequently issued books, pending/overdue returns, and individual member borrowing history with applicable fines**.
+
+* **Robust error handling** — Input and business-rule checks are performed throughout the application using dedicated custom exceptions, including cases for **invalid data, duplicate records, missing books/users, failed authentication, and unavailable books**.
+
+* **Activity tracking** — Important system events are automatically recorded with timestamps in `logs/app.log`. A **Singleton-based logging mechanism** ensures that logging is handled through a centralized instance.
+
+* **Secure credential storage** — User passwords are converted into **SHA-256 hashes** before being stored, ensuring that the original plaintext credentials are not saved in the application's data files.
+
+* **Built-in verification tests** — The project includes **20 test cases** covering authentication, input validation, user/book operations, and the complete **issue → return → fine calculation** process. Tests use in-memory implementations, keeping them independent of external testing libraries.
+
 
 ## Technologies / Tools Used
 
