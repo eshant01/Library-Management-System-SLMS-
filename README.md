@@ -124,7 +124,7 @@ All diagrams live in [`docs/diagrams/`](docs/diagrams) as Mermaid code
 
 ```bash
 # 1. Clone the repository
-git clone <your-repo-url>
+git clone https://github.com/eshant01/Library-Management-System-SLMS-.git
 cd LibraryManagementSystem
 
 # 2. Compile the main application
@@ -191,3 +191,7 @@ screenshots here before submission if required by your instructor.)
 
 Academic project submitted for course evaluation. No specific license
 applied; reuse for educational purposes.
+
+## Author
+Name: Eshant Baranwal
+Registration Number: 24BCY10212
