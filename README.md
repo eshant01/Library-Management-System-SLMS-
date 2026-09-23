@@ -1,13 +1,7 @@
 # Smart Library Management System (SLMS)
 
-A console-based Library Management System built in **Core Java**, developed
-as the "Build Your Own Project" submission for the **Java Programming**
-course (VITyarthi flipped-course evaluation).
+A **Core Java–based Library Management System** developed as a **Build Your Own Project** for the **Java Programming** course under the **VITyarthi flipped-course evaluation**. The application provides a practical implementation of Java concepts such as **OOP principles, abstraction, inheritance, polymorphism, interfaces, collections, exception handling, and file handling**. It also incorporates **Singleton, Factory, and DAO design patterns** to organize the system into a structured, maintainable, and real-world application.
 
-The project demonstrates core Java/OOP concepts — abstraction, inheritance,
-polymorphism, interfaces, the Collections Framework, exception handling,
-file I/O, and classic design patterns (Singleton, Factory, DAO) — inside a
-realistic, layered application rather than isolated exercises.
 
 ## Overview
 
