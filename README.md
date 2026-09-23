@@ -176,5 +176,4 @@ Academic project submitted for course evaluation. No specific license
 applied; reuse for educational purposes.
 
 ## Author
-Name: Eshant Baranwal
-Registration Number: 24BCY10212
+Eshant Baranwal(24BCY10212)
